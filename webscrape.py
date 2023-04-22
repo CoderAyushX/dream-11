@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
   
 # URL of the webpage to scrape
-URL = "https://www.cricbuzz.com/cricket-match-squads/66278/rcb-vs-csk-24th-match-indian-premier-league-2023"
+URL = "https://www.cricbuzz.com/cricket-match-squads/66285/srh-vs-mi-25th-match-indian-premier-league-2023"
 
 # Send a GET request to the URL and store the response in 'r'
 r = requests.get(URL)

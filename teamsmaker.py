@@ -169,14 +169,28 @@ def team_maker(team_type=None):
     random_item_2.append( random.choice(bowler_combo_3))
 
 
-    bowler_combo_2_n_1 = bowler_combo_2 + random_item_1
-    bowler_combo_3_n_1 = bowler_combo_3 + random_item_1
+    bowler_combo_2_n_1 = bowler_combo_2 + random_item_1 # 2- 3 + one random
+    bowler_combo_3_n_1 = bowler_combo_3 + random_item_1  # 3- 2 + one random
 
     # the final bowlers list
-    final_bowler_list = bowler_combo_2_n_1+bowler_combo_3_n_1 + \
-        bowler_combo_2_n_1+bowler_combo_3_n_1
+    combo_bowlers_2_3 = bowler_combo_2_n_1+bowler_combo_2_n_1 # 50 2-3 teams
+    combo_bowlers_3_2 = bowler_combo_3_n_1+bowler_combo_3_n_1 # 50 3-2 teams
 
-    # suffleing the 100 bowlers combos for 10 times
+    
+
+    # suffleing the 100 bowlers like 1 from 2-3 and 1 from 3-2
+    indexes = list(range(1, 51))
+
+
+    final_bowler_list = []
+
+    for i in range(len(indexes)):
+       temp =  [combo_bowlers_2_3[i]] + [combo_bowlers_3_2[i]]
+       final_bowler_list.extend(temp)
+
+
+  
+
     for i in range(10):
         random.shuffle(final_bowler_list)
 
